@@ -8,10 +8,6 @@ import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.plot.JFuzzyChart;
 import net.sourceforge.jFuzzyLogic.rule.Rule;
 
-/**
- * Test parsing an FCL file
- * @author pcingola@users.sourceforge.net
- */
 public class LogicaDifusa {
 
     public static void main(String[] args) throws Exception {
@@ -24,9 +20,9 @@ public class LogicaDifusa {
             return;
         }
         // Set inputs
-        fis.setVariable("rojo", 83);
-        fis.setVariable("verde", 81);
-        fis.setVariable("azul", 19);
+        fis.setVariable("rojo", 116);
+        fis.setVariable("verde", 144);
+        fis.setVariable("azul", 53);
 
         // Evaluate
         fis.evaluate();
