@@ -4,10 +4,5 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="Librerias/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="lib" path="Librerias/jFuzzyLogic_core.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Daniel/Downloads/RGB/Librerias/opencv-410.jar">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Daniel/Downloads/RGB/Librerias"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

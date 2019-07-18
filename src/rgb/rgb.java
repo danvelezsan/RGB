@@ -4,10 +4,6 @@ import java.awt.image.BufferedImage;
 import java.awt.Color;
 import java.io.File;
 import javax.imageio.ImageIO;
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
 
 public class rgb {
 
@@ -17,7 +13,7 @@ public class rgb {
 		int sumrojo = 0, sumverde = 0, sumazul = 0;
 
 		try {
-      		File file = new File("C:/Users/Daniel/Downloads/RGB/Imágenes/2.PNG");
+      		File file = new File("C:/Users/Daniel/Downloads/RGB/Imágenes/Captura.PNG");
       		BufferedImage image = ImageIO.read(file);
       		
       		int alto = image.getHeight(); //Altura de la imagen

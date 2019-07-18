@@ -24,9 +24,9 @@ public class LogicaDifusa {
             return;
         }
         // Set inputs
-        fis.setVariable("rojo", 116);
-        fis.setVariable("azul", 53);
-        fis.setVariable("verde", 144);
+        fis.setVariable("rojo", 83);
+        fis.setVariable("verde", 81);
+        fis.setVariable("azul", 19);
 
         // Evaluate
         fis.evaluate();

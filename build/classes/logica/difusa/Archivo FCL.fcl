@@ -44,7 +44,7 @@ FUZZIFY verde
     TERM PocoVerde := (94,0) (118,1) (124,0);
     TERM AlgoVerde := (120,0) (126,1) (139,0);
     TERM Verde := (130,0) (144,1) (145,0);
-    TERM AltamenteVerde := (144,0) (145,1) (157,0);
+    TERM AltamenteVerde := (144,0) (144,1) (157,0);
     TERM MuyVerde := (149,0) (162,1) (184,0);
     TERM ExtremadamenteVerde := (169,0) (192,1) (215,0);
 END_FUZZIFY
@@ -72,14 +72,14 @@ RULEBLOCK No1
     ACT : MIN;  // Use 'min' activation method
     ACCU : MAX; // Use 'max' accumulation method
     
-    RULE 1: IF rojo IS NadaRojo OR azul IS MuyPocoAzul OR verde IS AlgoVerde THEN estado IS Verde1;
-	RULE 2: IF rojo IS MuyPocoRojo OR azul IS PocoAzul OR verde IS AltamenteVerde THEN estado IS Verde2;
-	RULE 3: IF rojo IS PocoRojo OR azul IS Azul OR verde IS MuyVerde THEN estado IS Verde3;
-	RULE 4: IF rojo IS MuyRojo OR azul IS AltamenteAzul OR verde IS ExtremadamenteVerde THEN estado IS Amarillo;
-	RULE 5: IF rojo IS AltamenteRojo OR azul IS NadaAzul OR verde IS Verde THEN estado IS Pinton;
-	RULE 6: IF rojo IS ExtremadamenteRojo OR azul IS AlgoAzul OR verde IS NadaVerde THEN estado IS Maduro;
-	RULE 7: IF rojo IS Rojo OR azul IS MuyAzul OR verde IS MuyPocoVerde THEN estado IS Sobremaduro;
-	RULE 8: IF rojo IS AlgoRojo OR azul IS ExtremadamenteAzul OR verde IS PocoVerde THEN estado IS Seco;
+    RULE 1: IF (rojo IS NadaRojo AND verde IS AlgoVerde) OR azul IS MuyPocoAzul THEN estado IS Verde1;
+	RULE 2: IF (rojo IS MuyPocoRojo AND verde IS AltamenteVerde) OR azul IS PocoAzul THEN estado IS Verde2;
+	RULE 3: IF (rojo IS PocoRojo AND verde IS MuyVerde) OR azul IS Azul THEN estado IS Verde3;
+	RULE 4: IF (rojo IS MuyRojo AND verde IS ExtremadamenteVerde) OR azul IS AltamenteAzul THEN estado IS Amarillo;
+	RULE 5: IF (rojo IS AltamenteRojo AND verde IS Verde) OR azul IS NadaAzul THEN estado IS Pinton;
+	RULE 6: IF (rojo IS ExtremadamenteRojo AND verde IS NadaVerde) OR azul IS AlgoAzul THEN estado IS Maduro;
+	RULE 7: IF (rojo IS Rojo AND verde IS MuyPocoVerde) OR azul IS MuyAzul THEN estado IS Sobremaduro;
+	RULE 8: IF (rojo IS AlgoRojo AND verde IS PocoVerde) OR azul IS ExtremadamenteAzul THEN estado IS Seco;
 
     					
 END_RULEBLOCK
