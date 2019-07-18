@@ -1,0 +1,87 @@
+// Block definition (there may be more than one block per file)
+FUNCTION_BLOCK RGB
+
+// Define input variables
+VAR_INPUT
+    rojo : REAL;
+    azul : REAL;
+    verde : REAL;
+END_VAR
+
+// Define output variable
+VAR_OUTPUT
+    estado : REAL;
+END_VAR
+
+// Fuzzify input variable 'rojo'
+FUZZIFY rojo
+    TERM NadaRojo := (28,0) (65,1) (102,0);
+    TERM MuyPocoRojo := (77,0) (116,1) (122,0);
+    TERM PocoRojo := (118,0) (124,1) (130,0);
+    TERM AlgoRojo := (126,0) (133,1) (158,0);
+    TERM Rojo := (141,0) (168,1) (169,0);
+    TERM AltamenteRojo := (168,0) (169,1) (172,0);
+    TERM MuyRojo := (170,0) (173,1) (182,0);
+    TERM ExtremadamenteRojo := (176,0) (186,1) (196,0);
+END_FUZZIFY
+
+// Fuzzify input variable 'azul'
+FUZZIFY azul
+    TERM NadaAzul := (31,0) (38,1) (45,0);
+    TERM MuyPocoAzul := (40,0) (49,1) (52,0);
+    TERM PocoAzul := (50,0) (53,1) (57,0);
+    TERM AlgoAzul := (54,0) (59,1) (60,0);
+    TERM Azul := (59,0) (62,1) (74,0);
+    TERM AltamenteAzul := (66,0) (79,1) (83,0);
+    TERM MuyAzul := (80,0) (86,1) (113,0);
+    TERM ExtremadamenteAzul := (95,0) (122,1) (149,0);
+END_FUZZIFY
+
+// Fuzzify input variable 'verde'
+FUZZIFY verde
+    TERM NadaVerde := (50,0) (67,1) (80,0);
+    TERM MuyPocoVerde := (71,0) (86,1) (110,0);
+    TERM PocoVerde := (94,0) (118,1) (124,0);
+    TERM AlgoVerde := (120,0) (126,1) (139,0);
+    TERM Verde := (130,0) (144,1) (145,0);
+    TERM AltamenteVerde := (144,0) (145,1) (157,0);
+    TERM MuyVerde := (149,0) (162,1) (184,0);
+    TERM ExtremadamenteVerde := (169,0) (192,1) (215,0);
+END_FUZZIFY
+
+// Defzzzify output variable 'estado'
+DEFUZZIFY estado
+    TERM Verde1 := (0.25,0) (1,1) (1.75,0);
+    TERM Verde2 := (1.25,0) (2,1) (2.75,0);
+    TERM Verde3 := (2.25,0) (3,1) (3.75,0);
+    TERM Amarillo := (3.25,0) (4,1) (4.75,0);
+    TERM Pinton := (4.25,0) (5,1) (5.75,0);
+    TERM Maduro := (5.25,0) (6,1) (6.75,0);
+    TERM Sobremaduro := (6.25,0) (7,1) (7.75,0);
+    TERM Seco := (7.25,0) (8,1) (8.75,0);
+    // Use 'Center Of Gravity' defuzzification method
+    METHOD : COG;
+    // Default value is 0 (if no rule activates defuzzifier)
+    DEFAULT := 0;
+END_DEFUZZIFY
+
+RULEBLOCK No1
+    // Use 'min' for 'and' (also implicit use 'max'
+    // for 'or' to fulfill DeMorgan's Law)
+    AND : MIN;
+    ACT : MIN;  // Use 'min' activation method
+    ACCU : MAX; // Use 'max' accumulation method
+    
+    RULE 1: IF rojo IS NadaRojo OR azul IS MuyPocoAzul OR verde IS AlgoVerde THEN estado IS Verde1;
+	RULE 2: IF rojo IS MuyPocoRojo OR azul IS PocoAzul OR verde IS AltamenteVerde THEN estado IS Verde2;
+	RULE 3: IF rojo IS PocoRojo OR azul IS Azul OR verde IS MuyVerde THEN estado IS Verde3;
+	RULE 4: IF rojo IS MuyRojo OR azul IS AltamenteAzul OR verde IS ExtremadamenteVerde THEN estado IS Amarillo;
+	RULE 5: IF rojo IS AltamenteRojo OR azul IS NadaAzul OR verde IS Verde THEN estado IS Pinton;
+	RULE 6: IF rojo IS ExtremadamenteRojo OR azul IS AlgoAzul OR verde IS NadaVerde THEN estado IS Maduro;
+	RULE 7: IF rojo IS Rojo OR azul IS MuyAzul OR verde IS MuyPocoVerde THEN estado IS Sobremaduro;
+	RULE 8: IF rojo IS AlgoRojo OR azul IS ExtremadamenteAzul OR verde IS PocoVerde THEN estado IS Seco;
+
+    					
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
