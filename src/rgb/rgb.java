@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.io.File;
 import javax.imageio.ImageIO;
 
+
 public class rgb {
 
 	public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class rgb {
 		int sumrojo = 0, sumverde = 0, sumazul = 0;
 
 		try {
-      		File file = new File("C:/Users/Daniel/Downloads/RGB/Imágenes/Captura.PNG");
+      		File file = new File("C:/Users/David Ospina/eclipse-workspace/RGB/Imágenes/2.PNG");
       		BufferedImage image = ImageIO.read(file);
       		
       		int alto = image.getHeight(); //Altura de la imagen
