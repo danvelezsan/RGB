@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica.difusa;
+package cofuzy;
 
 import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.plot.JFuzzyChart;
@@ -23,7 +23,7 @@ public class LogicaDifusa {
         fis.setVariable("rojo", 116);
         fis.setVariable("verde", 144);
         fis.setVariable("azul", 53);
-
+    
         // Evaluate
         fis.evaluate();
 
