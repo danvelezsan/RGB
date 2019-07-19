@@ -44,7 +44,7 @@ FUZZIFY verde
     TERM PocoVerde := (94,0) (118,1) (124,0);
     TERM AlgoVerde := (120,0) (126,1) (139,0);
     TERM Verde := (130,0) (144,1) (145,0);
-    TERM AltamenteVerde := (144,0) (144,1) (157,0);
+    TERM AltamenteVerde := (143,0) (144,1) (157,0);
     TERM MuyVerde := (149,0) (162,1) (184,0);
     TERM ExtremadamenteVerde := (169,0) (192,1) (215,0);
 END_FUZZIFY
