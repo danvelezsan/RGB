@@ -10,7 +10,7 @@ import net.sourceforge.jFuzzyLogic.rule.Rule;
 
 public class LogicaDifusa {
 
-    public static void main(String[] args) throws Exception {
+    public static void fusificar(int sumrojo, int sumverde, int sumazul) throws Exception {
         // Load from 'FCL' file
         String fileName = "src/logica/difusa/Archivo FCL.fcl";
         FIS fis = FIS.load(fileName, true);
@@ -20,9 +20,9 @@ public class LogicaDifusa {
             return;
         }
         // Set inputs
-        fis.setVariable("rojo", 116);
-        fis.setVariable("verde", 144);
-        fis.setVariable("azul", 53);
+        fis.setVariable("rojo", sumrojo);
+        fis.setVariable("verde", sumverde);
+        fis.setVariable("azul", sumazul);
     
         // Evaluate
         fis.evaluate();

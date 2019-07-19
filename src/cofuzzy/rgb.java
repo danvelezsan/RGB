@@ -6,14 +6,18 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 public class rgb {
+	
+	public static int sumrojo;
+	public static int sumazul;
+	public static int sumverde;
 
-	public static void main(String[] args) {
+	public static void calcularRGB(String ruta) {
 		
 		int clr, rojo, verde, azul;
 		int sumrojo = 0, sumverde = 0, sumazul = 0;
 
 		try {
-      		File file = new File("Imágenes/2.PNG");
+      		File file = new File(ruta);
       		BufferedImage image = ImageIO.read(file);
       		
       		int alto = image.getHeight(); //Altura de la imagen
@@ -34,17 +38,12 @@ public class rgb {
       		sumrojo = sumrojo / (alto * ancho); //promedio del valor rojo 
       		sumazul = sumazul / (alto * ancho); //promedio del valor azul
       		sumverde = sumverde / (alto * ancho); //promedio del valor verde
-      		
-      		float[] hsv = new float[3];
-      		Color.RGBtoHSB(sumrojo, sumverde, sumazul, hsv);
-      		System.out.println(sumrojo);
-      		System.out.println(sumverde);
-      		System.out.println(sumazul);
-      		System.out.println(hsv[0]*100 + "%");
+      		rgb.sumrojo =sumrojo;
+      		rgb.sumverde = sumverde;
+      		rgb.sumazul = sumazul;
       		
      	} 
 		catch (Exception e) {
-      		//System.out.println("Exeption");
      	}	     
 	}
 }
