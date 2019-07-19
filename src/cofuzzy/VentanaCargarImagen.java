@@ -1,5 +1,5 @@
 package cofuzzy;
-//Autor de esta vaina: Cristian Ramirez Higinio
+
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,6 +11,8 @@ import java.io.IOException;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+
+import cofuzzy.rgb;
 
 @SuppressWarnings("serial")
 public class VentanaCargarImagen extends JFrame {
@@ -25,6 +27,10 @@ public class VentanaCargarImagen extends JFrame {
 	public static String resultadoMadurez = "Aca va el Fuzzy-resultado de madurez";
 	
 	public static void main(String[] args) {
+		ejecutar();
+	}
+	
+	public static void ejecutar() {
 		
 		VentanaCargarImagen Ventana1 = new VentanaCargarImagen();
 		
@@ -126,6 +132,7 @@ public class VentanaCargarImagen extends JFrame {
 	
 	public static void guardarRutaImagen(String ruta) {
 		rutaImagen = ruta;
+		rgb.calcularRGB(ruta);
 	}
 	
 }

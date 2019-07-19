@@ -38,9 +38,9 @@ public class rgb {
       		sumrojo = sumrojo / (alto * ancho); //promedio del valor rojo 
       		sumazul = sumazul / (alto * ancho); //promedio del valor azul
       		sumverde = sumverde / (alto * ancho); //promedio del valor verde
-      		rgb.sumrojo =sumrojo;
-      		rgb.sumverde = sumverde;
-      		rgb.sumazul = sumazul;
+      		rgb.sumrojo =sumrojo;System.out.println(sumrojo);
+      		rgb.sumverde = sumverde;System.out.println(sumverde);
+      		rgb.sumazul = sumazul;System.out.println(sumazul);
       		
      	} 
 		catch (Exception e) {
