@@ -12,7 +12,7 @@ public class LogicaDifusa {
 
     public static double fusificar(int sumrojo, int sumverde, int sumazul) throws Exception {
         // Load from 'FCL' file
-        String fileName = "src/logica/difusa/Archivo FCL.fcl";
+        String fileName = "src/cofuzzy/Archivo FCL.fcl";
         FIS fis = FIS.load(fileName, true);
         // Error while loading?
         if (fis == null) {
