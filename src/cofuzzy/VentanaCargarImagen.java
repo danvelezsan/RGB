@@ -24,8 +24,8 @@ public class VentanaCargarImagen extends JFrame {
 	
 	public static String rutaImagen;
 	public static String titulo = "COFUZZY";
-	public static String resultadoMadurez = "Aca va el Fuzzy-resultado de madurez";
-	public static JLabel salidaLbl = new JLabel("",SwingConstants.CENTER);
+	public static JTextArea salidaLbl = new JTextArea("");
+	public static String resultadoMadurez = "Las imágenes tienen espacios de color. En la imagen de un grano de café, los valores de los diferentes espacios de color cambian dependiendo del estado de maduración del grano. Leyendo una imagen de granos de café y extrayendo los valores de los espacios de color de la imagen podemos calcular su estado de madurez por métodos de fuzzificación/borrosificación su estado de madurez";
 	
 	public static void ejecutar() {
 		
@@ -52,6 +52,10 @@ public class VentanaCargarImagen extends JFrame {
 		salidaLbl.setText(resultadoMadurez);
 		salidaLbl.setFont(new Font("SansSerif", Font.BOLD, 15));
 		salidaLbl.setPreferredSize(new Dimension(300, 300));
+		salidaLbl.setBackground(Color.white);
+		salidaLbl.setOpaque(true);
+		salidaLbl.setLineWrap(true);
+		salidaLbl.setWrapStyleWord(true);
 		contAbajo.add(salidaLbl,BorderLayout.WEST);
 		
 		//Contenedor de la imagen y el boton
