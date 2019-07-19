@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.awt.Color;
 import java.io.File;
 import javax.imageio.ImageIO;
+import cofuzzy.LogicaDifusa;
 
 public class rgb {
 	
@@ -41,6 +42,9 @@ public class rgb {
       		rgb.sumrojo =sumrojo;System.out.println(sumrojo);
       		rgb.sumverde = sumverde;System.out.println(sumverde);
       		rgb.sumazul = sumazul;System.out.println(sumazul);
+      		
+      		Double x = LogicaDifusa.fusificar(sumrojo, sumverde, sumazul);
+      		System.out.println(x);
       		
      	} 
 		catch (Exception e) {
