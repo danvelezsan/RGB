@@ -9,8 +9,10 @@ import net.sourceforge.jFuzzyLogic.plot.JFuzzyChart;
 import net.sourceforge.jFuzzyLogic.rule.Rule;
 
 public class LogicaDifusa {
+	
+	public static double x; 
 
-    public static double fusificar(int sumrojo, int sumverde, int sumazul) throws Exception {
+    public static void fusificar(int sumrojo, int sumverde, int sumazul) throws Exception {
         // Load from 'FCL' file
         String fileName = "src/cofuzzy/Archivo FCL.fcl";
         FIS fis = FIS.load(fileName, true);
@@ -36,6 +38,6 @@ public class LogicaDifusa {
         for (Rule r : fis.getFunctionBlock("RGB").getFuzzyRuleBlock("No1").getRules()) {
             System.out.println(r);
         }
-        return x;
+        LogicaDifusa.x = x;
     }
 }

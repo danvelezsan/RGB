@@ -25,10 +25,7 @@ public class VentanaCargarImagen extends JFrame {
 	public static String rutaImagen;
 	public static String titulo = "Titulo";
 	public static String resultadoMadurez = "Aca va el Fuzzy-resultado de madurez";
-	
-	public static void main(String[] args) {
-		ejecutar();
-	}
+	public static JLabel salidaLbl = new JLabel("",SwingConstants.CENTER);
 	
 	public static void ejecutar() {
 		
@@ -45,13 +42,9 @@ public class VentanaCargarImagen extends JFrame {
 		tituloLbl.setFont(new Font("SansSerif", Font.BOLD, 30));
 		Ventana1.add(tituloLbl,BorderLayout.NORTH);
 				
-		//IMAGEN Y ESPACIO PARA LA MISMA
+		//IMAGEN
 				
 		JLabel ImgLbl = new JLabel();
-		//String rutaImg = "C:/ScaredCat.jpg";
-		//ImageIcon imagen = new ImageIcon(rutaImg);
-		//ImgLbl.setIcon(imagen);
-		//Ventana1.add(ImgLbl);
 		
 		//Contenedor de Boton y Label
 		JPanel contAbajo = new JPanel();
@@ -65,11 +58,9 @@ public class VentanaCargarImagen extends JFrame {
 		//Label de la salida
 		
 		Border border = new LineBorder(Color.black, 3);
-		
-		String salida = resultadoMadurez; 
-		JLabel salidaLbl = new JLabel(salida,SwingConstants.CENTER);
-		salidaLbl.setFont(new Font("SansSerif", Font.BOLD, 15));
 		salidaLbl.setBorder(border);
+		salidaLbl.setText(resultadoMadurez);
+		salidaLbl.setFont(new Font("SansSerif", Font.BOLD, 15));
 		salidaLbl.setPreferredSize(new Dimension(500, 50));
 		contAbajo.add(salidaLbl);
 		
@@ -100,7 +91,7 @@ public class VentanaCargarImagen extends JFrame {
 	            	    System.out.println(rutaImg2);
 	            	    
             			//Guardar la imagen para poder usarla luego en el proceso de Vision artificial
-            			Ventana1.guardarRutaImagen(rutaImg2);
+            			VentanaCargarImagen.guardarRutaImagen(rutaImg2,Ventana1);
 	            	    
 	            	    //Tratamos de poner la imagen leida en la ventana
 	            	    try(FileReader fr = new FileReader(fichero)){
@@ -130,9 +121,16 @@ public class VentanaCargarImagen extends JFrame {
 				
 	}
 	
-	public static void guardarRutaImagen(String ruta) {
+	public static void guardarRutaImagen(String ruta, VentanaCargarImagen ventana) {
 		rutaImagen = ruta;
-		rgb.calcularRGB(ruta);
+		rgb.calcularRGB(ruta,ventana);
+	}
+	
+	public void setLabelEstadoMaduracion (Double x) {
+		resultadoMadurez = x.toString();
+		String salida = "El grano está " + resultadoMadurez; 
+		salidaLbl.setText(salida);
+		this.repaint();
 	}
 	
 }

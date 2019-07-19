@@ -12,7 +12,7 @@ public class rgb {
 	public static int sumazul;
 	public static int sumverde;
 
-	public static void calcularRGB(String ruta) {
+	public static void calcularRGB(String ruta, VentanaCargarImagen ventana) {
 		
 		int clr, rojo, verde, azul;
 		int sumrojo = 0, sumverde = 0, sumazul = 0;
@@ -43,9 +43,9 @@ public class rgb {
       		rgb.sumverde = sumverde;System.out.println(sumverde);
       		rgb.sumazul = sumazul;System.out.println(sumazul);
       		
-      		Double x = LogicaDifusa.fusificar(sumrojo, sumverde, sumazul);
-      		System.out.println(x);
-      		
+      		LogicaDifusa.fusificar(sumrojo, sumverde, sumazul);
+      		System.out.println(LogicaDifusa.x);
+      		ventana.setLabelEstadoMaduracion(LogicaDifusa.x);
      	} 
 		catch (Exception e) {
      	}	     
