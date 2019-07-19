@@ -1,4 +1,4 @@
-package coffuzy;
+package cofuzzy;
 
 import java.awt.image.BufferedImage;
 import java.awt.Color;

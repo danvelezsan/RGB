@@ -1,4 +1,4 @@
-package VentanaCargarImagen;
+package cofuzzy;
 //Autor de esta vaina: Cristian Ramirez Higinio
 
 import java.awt.*;
