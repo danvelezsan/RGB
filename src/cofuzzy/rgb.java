@@ -45,7 +45,7 @@ public class rgb {
       		
       		LogicaDifusa.fusificar(sumrojo, sumverde, sumazul);
       		System.out.println(LogicaDifusa.x);
-      		ventana.setLabelEstadoMaduracion(LogicaDifusa.x);
+      		ventana.setLabelEstadoMaduracion(LogicaDifusa.x, sumrojo, sumverde, sumazul);
      	} 
 		catch (Exception e) {
      	}	     

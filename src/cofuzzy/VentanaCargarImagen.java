@@ -135,9 +135,16 @@ public class VentanaCargarImagen extends JFrame {
 		rgb.calcularRGB(ruta,ventana);
 	}
 	
-	public void setLabelEstadoMaduracion (String x) {
+	public void setLabelEstadoMaduracion (String x, Integer sumrojo, Integer sumverde, Integer sumazul) {
 		resultadoMadurez = x;
-		String salida = "El grano está " + resultadoMadurez; 
+		
+		String salida = "El grano está " + resultadoMadurez;
+		
+		salida += "\n"+"El método usado para defuzificar el estado de maduración fue centro de gravedad";
+		salida += "\n"+"El valor de rojo es "+ sumrojo.toString();
+		salida += "\n"+"El valor de verde es "+ sumazul.toString();
+		salida += "\n"+"El valor de azul es "+ sumazul.toString();
+		
 		salidaLbl.setText(salida);
 		this.repaint();
 	}
