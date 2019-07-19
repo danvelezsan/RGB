@@ -23,7 +23,7 @@ public class VentanaCargarImagen extends JFrame {
 	}
 	
 	public static String rutaImagen;
-	public static String titulo = "Titulo";
+	public static String titulo = "COFUZZY";
 	public static String resultadoMadurez = "Aca va el Fuzzy-resultado de madurez";
 	public static JLabel salidaLbl = new JLabel("",SwingConstants.CENTER);
 	
@@ -31,7 +31,6 @@ public class VentanaCargarImagen extends JFrame {
 		
 		VentanaCargarImagen Ventana1 = new VentanaCargarImagen();
 		
-		//setSize(1000,1300);
 		Ventana1.setLayout(new BorderLayout());
 		Ventana1.setVisible(true);
 		Ventana1.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -41,19 +40,10 @@ public class VentanaCargarImagen extends JFrame {
 		JLabel tituloLbl = new JLabel(titulo,SwingConstants.CENTER);
 		tituloLbl.setFont(new Font("SansSerif", Font.BOLD, 30));
 		Ventana1.add(tituloLbl,BorderLayout.NORTH);
-				
-		//IMAGEN
-				
-		JLabel ImgLbl = new JLabel();
 		
-		//Contenedor de Boton y Label
+		//Contenedor de Boton, la imagen y Label
 		JPanel contAbajo = new JPanel();
-		contAbajo.setLayout(new FlowLayout());
-		
-		//BOTON 
-		JButton cargarImgsBtn = new JButton("Cargar imagen");
-		cargarImgsBtn.setFont(new Font("SansSerif", Font.BOLD, 18));
-		contAbajo.add(cargarImgsBtn);
+		contAbajo.setLayout(new BorderLayout());
 		      		
 		//Label de la salida
 		
@@ -61,9 +51,24 @@ public class VentanaCargarImagen extends JFrame {
 		salidaLbl.setBorder(border);
 		salidaLbl.setText(resultadoMadurez);
 		salidaLbl.setFont(new Font("SansSerif", Font.BOLD, 15));
-		salidaLbl.setPreferredSize(new Dimension(500, 50));
-		contAbajo.add(salidaLbl);
+		salidaLbl.setPreferredSize(new Dimension(300, 300));
+		contAbajo.add(salidaLbl,BorderLayout.WEST);
 		
+		//Contenedor de la imagen y el boton
+		JPanel contDerecha = new JPanel();
+		contDerecha.setLayout(new BorderLayout());		
+		
+		//IMAGEN
+		JLabel ImgLbl = new JLabel();
+		ImgLbl.setPreferredSize(new Dimension(270, 250));
+		contDerecha.add(ImgLbl,BorderLayout.NORTH);
+		
+		//BOTON 
+		JButton cargarImgsBtn = new JButton("Cargar imagen");
+		cargarImgsBtn.setFont(new Font("SansSerif", Font.BOLD, 18));
+		contDerecha.add(cargarImgsBtn,BorderLayout.SOUTH);
+		
+		contAbajo.add(contDerecha,BorderLayout.EAST);
 		Ventana1.add(contAbajo,BorderLayout.CENTER);
 		Ventana1.pack();
 		
@@ -100,7 +105,7 @@ public class VentanaCargarImagen extends JFrame {
 	            			ImageIcon imagen2 = new ImageIcon(rutaImg2);
 	            			
 	            			ImgLbl.setIcon(imagen2);
-	            			Ventana1.add(ImgLbl,BorderLayout.SOUTH);
+	            			//Ventana1.add(ImgLbl,BorderLayout.SOUTH);
 	            			
 	            			Ventana1.validate();
 	            			Ventana1.repaint();
@@ -126,11 +131,12 @@ public class VentanaCargarImagen extends JFrame {
 		rgb.calcularRGB(ruta,ventana);
 	}
 	
-	public void setLabelEstadoMaduracion (Double x) {
-		resultadoMadurez = x.toString();
+	public void setLabelEstadoMaduracion (String x) {
+		resultadoMadurez = x;
 		String salida = "El grano está " + resultadoMadurez; 
 		salidaLbl.setText(salida);
 		this.repaint();
 	}
-	
+		
 }
+
