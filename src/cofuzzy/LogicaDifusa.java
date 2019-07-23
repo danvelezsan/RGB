@@ -44,28 +44,28 @@ public class LogicaDifusa {
     public static String categorizar(double x) {
     	String c;
     	if (x >= 0.25 && x <= 1.75) {
-    		c = "Verde 1";
+    		c = "'Verde 1' con un grado de pertenencia de: "+Math.round(x);
     	}
     	else if (x >= 1.25 && x <= 2.75) {
-    		c = "Verde 2";
+    		c = "'Verde 2' con un grado de pertenencia de: "+Math.round(x);
     	}
     	else if (x >= 2.25 && x <= 3.75) {
-    		c = "Verde 3";
+    		c = "'Verde 3' con un grado de pertenencia de: "+Math.round(x);
     	}
     	else if (x >= 3.25 && x <= 4.75) {
-    		c = "Amarillo";
+    		c = "'Amarillo' con un grado de pertenencia de: "+Math.round(x);
     	}
     	else if (x >= 4.25 && x <= 5.75) {
-    		c = "Pinton";
+    		c = "'Pinton' con un grado de pertenencia de: "+Math.round(x);
     	}
     	else if (x >= 5.25 && x <= 6.75) {
-    		c = "Maduro";
+    		c = "'Maduro' con un grado de pertenencia de: "+Math.round(x);
     	}
     	else if (x >= 6.25 && x <= 7.75) {
-    		c = "Sobremaduro";
+    		c = "'Sobremaduro' con un grado de pertenencia de: "+Math.round(x);
     	}
     	else if (x >= 7.25 && x <= 8.75) {
-    		c = "Seco";
+    		c = "'Seco' con un grado de pertenencia de: "+Math.round(x);
     	}
     	else {
     		c= "No se ha podido identificar el estado del grano";
