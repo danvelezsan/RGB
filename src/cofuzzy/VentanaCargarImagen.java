@@ -25,7 +25,7 @@ public class VentanaCargarImagen extends JFrame {
 	public static String rutaImagen;
 	public static String titulo = "COFUZZY";
 	public static JTextArea salidaLbl = new JTextArea("");
-	public static String resultadoMadurez = "Las imágenes tienen espacios de color. En la imagen de un grano de café, los valores de los diferentes espacios de color cambian dependiendo del estado de maduración del grano. Leyendo una imagen de granos de café y extrayendo los valores de los espacios de color de la imagen podemos calcular su estado de madurez por métodos de fuzzificación/borrosificación su estado de madurez";
+	public static String resultadoMadurez = "Las imágenes tienen espacios de color. En la imagen de un grano de café, los valores de los diferentes espacios de color cambian dependiendo del estado de maduración del grano. Leyendo una imagen de granos de café y extrayendo los valores de los espacios de color de la imagen podemos calcular su estado de madurez por métodos de fuzzificación.";
 	
 	public static void ejecutar() {
 		
@@ -138,13 +138,15 @@ public class VentanaCargarImagen extends JFrame {
 	public void setLabelEstadoMaduracion (String x, Integer sumrojo, Integer sumverde, Integer sumazul) {
 		resultadoMadurez = x;
 		
-		String salida = "El grano está " + resultadoMadurez;
+		String salida = "El grano está " + resultadoMadurez + ".";
+		salida +="\n";
 		
-		salida += "\n"+"El método usado para defuzificar el estado de maduración fue centro de gravedad";
-		salida += "\n"+"El valor de rojo es "+ sumrojo.toString();
-		salida += "\n"+"El valor de verde es "+ sumazul.toString();
-		salida += "\n"+"El valor de azul es "+ sumazul.toString();
+		salida += "\n"+"El valor de rojo es: "+ sumrojo.toString();
+		salida += "\n"+"El valor de verde es: "+ sumverde.toString();
+		salida += "\n"+"El valor de azul es: "+ sumazul.toString();
+		salida +="\n";
 		
+		salida += "\n"+"El método usado para defuzificar el estado de maduración fue: 'centro de gravedad'.";
 		salidaLbl.setText(salida);
 		this.repaint();
 	}
