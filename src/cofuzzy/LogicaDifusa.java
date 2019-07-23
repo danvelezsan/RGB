@@ -29,7 +29,7 @@ public class LogicaDifusa {
         fis.evaluate();
 
         // Show
-        JFuzzyChart.get().chart(fis.getFunctionBlock("RGB"));
+        //JFuzzyChart.get().chart(fis.getFunctionBlock("RGB"));
 
         Double x = fis.getVariable("estado").getLatestDefuzzifiedValue();
         System.err.println("Para los valores de salida el grado de pertenencia es: " + x);
